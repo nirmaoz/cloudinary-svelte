@@ -1,12 +1,20 @@
 <script>
+  /**
+   * Cloudinary Image Component
+   */
+
   export let public_id;
   export let cloud_name;
-  export let src;
-  export let alt="Image";
 
-	$: src = src || `https://res.cloudinary.com/${cloud_name}/image/upload/${public_id}`;
+  function getAttributes() {
+    let { public_id, cloud_name, ...attributes } = $$props;
+    attributes.src =
+      attributes.src ||
+      `https://res.cloudinary.com/${cloud_name}/image/upload/${public_id}`;
+    attributes.alt = attributes.alt || "Image";
 
+    return attributes;
+  }
 </script>
 
-<!-- your code here -->
-<img src="{src}" alt="{alt}"/>
+<img {...getAttributes()} />
