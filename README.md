@@ -2,9 +2,7 @@
 
 A [Cloudinary](https://cloudinary.com) Svelte SDK
 
-### Testing
-Comes with tests out of the box using [svelte-testing-library](https://github.com/testing-library/svelte-testing-library) + [Jest](https://github.com/facebook/jest).
-
+### Test
 To Run tests:
 ```bash
 npm test # or yarn
