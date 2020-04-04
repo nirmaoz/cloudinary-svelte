@@ -2,6 +2,10 @@
 
 A [Cloudinary](https://cloudinary.com) Svelte SDK
 
+## Components
+* [Image](https://nirmaoz.github.io/cloudinary-svelte/?path=/docs/image--sample)
+* [Video](https://nirmaoz.github.io/cloudinary-svelte/?path=/docs/video--sample)
+
 ### Test
 To Run tests:
 ```bash
