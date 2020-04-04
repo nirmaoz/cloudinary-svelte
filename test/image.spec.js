@@ -7,7 +7,7 @@ describe('Image', () => {
     const { container } = render(Image, { cloud_name: 'demo', public_id: 'sample' });
     const img = container.querySelector("img");
     expect(img.src).toBe(
-      'https://res.cloudinary.com/demo/image/upload/sample'
+      'http://res.cloudinary.com/demo/image/upload/sample'
     );
   });
 });

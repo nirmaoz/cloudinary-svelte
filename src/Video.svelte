@@ -3,17 +3,10 @@
    * Cloudinary Video Component
    */
 
-  export let public_id;
-  export let cloud_name;
-
-  function getAttributes() {
-    let { public_id, cloud_name, ...attributes } = $$props;
-    attributes.src =
-      attributes.src ||
-      `https://res.cloudinary.com/${cloud_name}/video/upload/${public_id}`;
-
-    return attributes;
-  }
+  import { getVideoTag } from "./utils";
+  $: videoTag = getVideoTag($$props);
 </script>
 
-<video {...getAttributes()} />
+<video {...videoTag.attributes()}>
+  {@html videoTag.content()}
+</video>

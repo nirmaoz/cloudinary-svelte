@@ -6,8 +6,8 @@ describe('Video', () => {
   test('src attribute should include cloud_name & public_id', () => {
     const { container } = render(Video, { cloud_name: 'demo', public_id: 'dog' });
     const video = container.querySelector("video");
-    expect(video.src).toBe(
-      'https://res.cloudinary.com/demo/video/upload/dog'
+    expect(video.childNodes[0].src).toBe(
+      'http://res.cloudinary.com/demo/video/upload/dog.webm'
     );
   });
 });

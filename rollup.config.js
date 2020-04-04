@@ -1,5 +1,6 @@
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
 
 const name = pkg.name
@@ -14,7 +15,15 @@ export default {
 		{ file: pkg.main, 'format': 'umd', name }
 	],
 	plugins: [
-		svelte(),
-		resolve()
+    resolve(),
+    svelte(),
+    commonjs({
+      namedExports: {
+        // left-hand side can be an absolute path, a path
+        // relative to the current directory, or the name
+        // of a module in node_modules
+        'cloudinary-core': ['Cloudinary']
+      }
+    })
 	]
 };
