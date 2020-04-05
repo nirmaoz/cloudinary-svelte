@@ -1,3 +1,2 @@
-import Image from './Image.svelte';
-import Video from './Video.svelte';
-export { Image, Video };
+export { default as Image } from './Image.svelte';
+export { default as Video } from './Video.svelte';

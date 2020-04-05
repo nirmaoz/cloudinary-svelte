@@ -14,8 +14,7 @@ export default {
 	output: [
 		{ file: pkg.module, 'format': 'es' },
     { file: pkg.main, 'format': 'umd', name },
-    { file: pkg.main.replace('.js','.min.js'), format: 'iife', name, plugins: [terser()]
-    }
+    { file: pkg.main.replace('.js','.min.js'), format: 'iife', name, plugins: [terser()]}
 	],
 	plugins: [
     resolve(),
