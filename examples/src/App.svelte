@@ -34,7 +34,7 @@
     margin: 0 auto;
   }
 
-  h1 {
+  .title {
     color: #ff3e00;
     text-transform: uppercase;
     font-size: 4em;
@@ -62,19 +62,22 @@
 </style>
 
 <main>
-  <h1>Example</h1>
+  <h1>Cloudinary Svelte SDK</h1>
+  <h1 class="title">Example</h1>
   <div>
     <h2>Image</h2>
     <div class="code-wrapper">
       <code>
-        {`<Image
-          cloud_name="{cloud_name}"
-          public_id="{image_public_id}"
-          transformation="{[
-            { width: 400, height: 400, gravity: 'face', radius: 'max', crop: 'crop' },
-            { width: 200, crop: 'scale' }
-          ]}"
-        />`}
+        {
+`<Image
+  cloud_name="${cloud_name}"
+  public_id="${image_public_id}"
+  transformation="{[
+    { width: 400, height: 400, gravity: 'face', radius: 'max', crop: 'crop' },
+    { width: 200, crop: 'scale' }
+  ]}"
+/>`
+        }
       </code>
     </div>
     <Image
@@ -86,16 +89,23 @@
     <h2>Video</h2>
     <div class="code-wrapper">
       <code>
-        {`<Video
-            cloud_name="{cloud_name}"
-            public_id="{video_public_id}"
-            transformation={{ angle: 20 }}
-           />`}
+        {
+`<Video
+  cloud_name="${cloud_name}"
+  public_id="${video_public_id}"
+  transformation={{ angle: 20 }}
+  controls
+  muted
+/>`
+      }
       </code>
     </div>
     <Video
       {cloud_name}
       public_id={video_public_id}
-      transformation={{ angle: 20 }} />
+      transformation={{ angle: 20 }}
+      controls
+      muted
+    />
   </div>
 </main>
